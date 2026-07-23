@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor targets so the sticky navbar never overlaps headings */
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: #e8843a;
+    color: #fff;
+  }
+
+  /* Headings lean on the display serif by default */
+  h1,
+  h2,
+  h3 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  /* Shared horizontal rhythm for every section */
+  .container-rb {
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Primary button — warm sunrise fill */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-sunrise px-7 py-3.5
+      text-sm font-semibold tracking-wide text-white shadow-glow transition
+      duration-300 hover:-translate-y-0.5 hover:bg-sunrise-deep focus:outline-none
+      focus-visible:ring-2 focus-visible:ring-sunrise focus-visible:ring-offset-2
+      focus-visible:ring-offset-cream;
+  }
+
+  /* Secondary button — outlined forest green */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-forest/40
+      bg-white/60 px-7 py-3.5 text-sm font-semibold tracking-wide text-forest-deep
+      backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-forest
+      hover:bg-forest hover:text-white focus:outline-none focus-visible:ring-2
+      focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-cream;
+  }
+
+  /* Small label / kicker above headings */
+  .kicker {
+    @apply inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10
+      px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-gold-deep;
+  }
+}
+
+@layer utilities {
+  /* Warm paper grain to keep large flat areas from feeling sterile */
+  .bg-grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+  }
+
+  /* The signature sunrise wash referenced from the logo */
+  .bg-sunrise-wash {
+    background:
+      radial-gradient(120% 90% at 78% 8%, rgba(232, 132, 58, 0.18), transparent 55%),
+      radial-gradient(90% 80% at 12% 0%, rgba(201, 168, 76, 0.16), transparent 50%),
+      linear-gradient(180deg, #fdf9f0 0%, #fbf6eb 60%, #f6efe1 100%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Entrance helpers — staggered page-load reveals */
+  .reveal {
+    @apply animate-fade-up;
+  }
+  .d-1 {
+    animation-delay: 0.08s;
+  }
+  .d-2 {
+    animation-delay: 0.18s;
+  }
+  .d-3 {
+    animation-delay: 0.3s;
+  }
+  .d-4 {
+    animation-delay: 0.44s;
+  }
+  .d-5 {
+    animation-delay: 0.6s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+  }
+}

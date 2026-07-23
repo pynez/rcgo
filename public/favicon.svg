@@ -1,0 +1,41 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RB Foundation">
+  <defs>
+    <linearGradient id="rb-bg" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#294453"/>
+      <stop offset="1" stop-color="#21323D"/>
+    </linearGradient>
+    <linearGradient id="rb-sun" x1="32" y1="16" x2="32" y2="42" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4D77B"/>
+      <stop offset="0.5" stop-color="#EDA84E"/>
+      <stop offset="1" stop-color="#E8843A"/>
+    </linearGradient>
+    <linearGradient id="rb-hill" x1="0" y1="36" x2="64" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6FA17C"/>
+      <stop offset="1" stop-color="#4A7C59"/>
+    </linearGradient>
+    <clipPath id="rb-clip">
+      <rect width="64" height="64" rx="15"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#rb-clip)">
+    <!-- Warm dark canvas -->
+    <rect width="64" height="64" fill="url(#rb-bg)"/>
+
+    <!-- Sun rays -->
+    <g stroke="#EBCB74" stroke-width="2.6" stroke-linecap="round">
+      <line x1="32" y1="5"  x2="32" y2="12"/>
+      <line x1="16" y1="9"  x2="19.5" y2="15"/>
+      <line x1="48" y1="9"  x2="44.5" y2="15"/>
+      <line x1="6"  y1="20" x2="12.5" y2="23.5"/>
+      <line x1="58" y1="20" x2="51.5" y2="23.5"/>
+    </g>
+
+    <!-- Rising sun, cresting the horizon -->
+    <circle cx="32" cy="30" r="14" fill="url(#rb-sun)"/>
+
+    <!-- Green horizon -->
+    <path d="M-2 40 C 11 34, 23 37, 32 37 C 41 37, 53 34, 66 40 L 66 66 L -2 66 Z" fill="url(#rb-hill)"/>
+    <path d="M-2 40 C 11 34, 23 37, 32 37 C 41 37, 53 34, 66 40" stroke="#94C1A0" stroke-width="1.4" fill="none" opacity="0.6"/>
+  </g>
+</svg>
