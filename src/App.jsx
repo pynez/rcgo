@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import WhatsNew from './components/WhatsNew'
 import About from './components/About'
 import Impact from './components/Impact'
 import Stories from './components/Stories'
@@ -24,6 +25,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <WhatsNew />
         <About />
         <Impact />
         <Stories />
